@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="rfc7991bis.rnc"?>  <!-- Required for schema validation and schema-aware editing -->
+
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
+
+<rfc
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  category="info"
+  docName="draft-daley-meeting-network-requirements-00"
+  ipr="trust200902"
+  obsoletes=""
+  updates=""
+  submissionType="IETF"
+  xml:lang="en"
+  version="3">
+  
+  <front>
+    <title>IETF Network Requirements</title>   
+    <seriesInfo name="Internet-Draft" value="draft-daley-meeting-network-requirements-00"/>
+    <author fullname="Jay Daley" initials="J" surname="Daley">     
+      <!-- all of the following elements are optional -->
+      <organization>IETF Administration LLC</organization>
+      <address>
+        <postal>
+          <street>1000 N. West St, Ste 1200</street>
+          <city>Wilmington</city>
+          <region>DE</region>
+          <code>19801</code>
+          <country>US</country>
+        </postal>        
+        <email>jay@staff.ietf.org</email>  
+      </address>
+    </author>
+    
+    <date year="2025"/>
+    
+    <area>General</area>
+    <workgroup>Internet Engineering Task Force</workgroup>    
+    <keyword>network</keyword>
+    <keyword>meeting</keyword>
+    <keyword>noc</keyword>
+    
+    <abstract>
+      <t>This document aims to initiate a conversation to clarify the way forward to address disagreements within the community about the requirements for the IETF meeting network, how it is delivered and whether or not the current cost and effort of providing the network is reasonable.</t>
+    </abstract>
+    
+  </front>
+  
+  <middle>
+    
+    <section>
+      <name>Introduction</name>
+      <t>The network that IETF participants use at an IETF Meeting has been a high-profile feature of IETF Meetings for some time and is now a major part of the behind-the-scenes work and cost of running an IETF Meeting. This network replaces any venue network using equipment donated by suppliers, installed and managed by a mixed team of volunteers and contractors.</t>      
+      <t>There are disagreements within the community about the requirements for this network, how it is delivered and whether or not the current cost and effort of providing the network is reasonable.</t>
+      <t>The IETF Administration LLC (IETF LLC) has overall responsibility for delivering IETF Meetings to meet community-set requirements including managing the meeting costs and service provision. However, the IETF LLC is unclear on what the path is to resolve these disagreements. This is important because they get to the heart of the requirements for the IETF Network and the resulting provision of that network. The main area of uncertainty is whether this is a community matter that requires a community-led process to determine an outcome such as an RFC, or this is for the IETF LLC to lead on and make decisions through its normal consultative processes.</t>
+      <t>This document aims to initiate a conversation to clarify the way forward. To do this, it provides a full primer on the facts needed to understand the current situation and the areas of disagreement. This includes It sets out the current high-level requirements for the IETF Network, an overview of how the IETF Network is delivered, how this relates back to the requirements and where the areas of disagreement are.</t>
+    </section>
+    
+    <section>
+      <name>Terms</name>
+      <dl>
+        <dt>IETF Network:</dt>
+        <dd>Used generically to mean the network used by IETF participants at an IETF meeting, however it is provided.</dd>
+        <dt>Remote Participation Services (RPS):</dt>
+        <dd>The service and all the parts that go with it that allows remote people to participate in an IETF Meeting.</dd>
+        <dt>Meeting Tool:</dt>
+        <dd>The tool participants must use during the meeting in order to participate.</dd>
+      </dl>
+    </section>
+    
+    <section>
+      <name>Background</name>
+      <t><xref target="BCP226"/> gives the following relevant mandatory criterion for venue selection:</t>
+      <blockquote>It MUST be possible to provision Internet Access to the Facility and IETF Hotels that allows those attending in person to utilize the Internet for all their IETF, business, and day-to-day needs; in addition, there must be sufficient bandwidth and access for remote attendees. Provisions include, but are not limited to, native and unmodified IPv4 and IPv6 connectivity, and global reachability; there may be no additional limitation that would materially impact their Internet use. To ensure availability, it MUST be possible to provision redundant paths to the Internet.</blockquote>
+      <t>It further goes on to give the following important, but not mandatory, relevant criteria:</t>
+      <blockquote>
+        <ul>
+          <li>The Facility's support technologies and services -- network, audio-video, etc. -- are sufficient for the anticipated activities at the meeting, or the Facility is willing to add such infrastructure, or these support technologies and services might be provided by a third party, all at no -- or at an acceptable -- cost to the IETF.</li>
+          <li>The IETF Hotels directly provide, or else permit and facilitate, the delivery of a high performance, robust, unfiltered, and unmodified Internet service for the public areas and guest rooms; this service is to be included in the cost of the room.</li>
+        </ul>  
+      </blockquote>
+      <t>In summary, this sets out requirements for a meeting network, conceptually split into two networks:</t>
+      <ul>
+        <li>Conference network</li>
+        <li>Hotel network</li>
+      </ul>
+      <t>It also sets the the following required attributes for those networks:</t>
+      <ul>
+        <li>Unfiltered and unmodified.</li>
+        <li>High performance and robust.</li>
+      </ul>
+    </section>
+    
+    <section>
+      <name>Requirements that the IETF Network currently aims to meet</name>
+      <section>
+        <name>The meeting networks and their purposes</name>
+        <section>
+          <name>Conference network</name>
+          <t>The mandatory criterion in <xref target="BCP226"/> is clear that the core purpose of the IETF Network is a conference network, which includes "all their IETF, business, and day-to-day needs".</t>
+          <t>In addition it requires that "there must be sufficient bandwidth and access for remote attendees". However, in practice this requirement has expanded in scope and importance as it is no longer possible to run an IETF Meeting without full support for the RPS and Meeting Tool:</t>
+          <ul>
+            <li>Over time, and boosted by the period during the COVID-pandemic when IETF Meetings went fully online, the level of active remote participation has grown considerably, and IETF Meetings have become dependent on the RPS to support this.</li>
+            <li>Several meeting practices now rely on the Meeting Tool, including the use of the queuing feature for all speakers at the microphone, recording meeting participation and the use of the poll feature to replace humming.</li>
+          </ul>
+        </section>
+        <section>
+          <name>Hotel network</name>
+          <t>The requirement for a hotel network (irrespective of how it is delivered) is set in <xref target="BCP226"/> as documented above, but this does not explain why this is a requirement.</t>
+          <t>One possible reason is that IETF participants have a higher dependency on the reliability of the hotel network than other hotel guests due to the nature of IETF participation, explained as follows.</t>
+          <t>As evidenced by annual community surveys, participation in the IETF is a part-time activity for a very high percentage of participants.  During the week of an IETF meeting, participants spend a much higher proportion of their working week on IETF activities than otherwise, which pushes many to work on their day job work and other personal commitments out of hours, from their hotel rooms, thereby increasing their dependency on the hotel network.</t>
+        </section>
+        <section>
+          <name>Experimental network</name>
+          <t>In addition to a conference network and a hotel network, the IETF Network also fulfills the purpose of an experimental network.</t>
+          <t>Running code is a key part of the IETF process. As documented in <xref target="BCP205"/> "there are benefits to the IETF standardization process of producing implementations of protocol specifications before publication as RFCs". Producing protocol implementations is, by definition, experimental on a network and so brings with it specific requirements that would not ordinarily be supported, such as:</t>
+          <ul>
+            <li>Running networking equipment with experimental features on them.</li>
+            <li>Providing an SSID which implements an experimental feature.</li>
+            <li>Sending packets that are built in ways that production equipment cannot recognise.</li>
+          </ul>
+          <t>Such experimentation can have an adverse impact on a production network and therefore needs to be clearly managed to prevent that.</t>
+        </section>
+      </section>
+      <section>
+        <name>Expectations of how these networks should be operated</name>
+        <t>Only the first of the following expectations is documented in a BCP. The rest have been understood by the IETF NOC, over many years of running the IETF Network, to be the expectations of the IETF community. These latter expectations do not have community consensus and have not been sufficiently reviewed to understand if they are mandatory or just desirable.</t>
+        <t>These expectations do not equally apply to the conference, hotel and experimental networks. The following table shows where they apply:</t>
+        <table>
+          <thead><tr><th/><th>Conference</th><th>Hotel</th><th>Experimental</th></tr></thead>
+          <tbody>
+            <tr><td>High performance and robust</td><td>x</td><td>x</td><td>-</td></tr>
+            <tr><td>Low friction</td><td>x</td><td>x</td><td>-</td></tr>
+            <tr><td>Good access to network data, without compromising privacy</td><td>x</td><td>x</td><td>x</td></tr>
+            <tr><td>Every participant needs to be able to participate fully</td><td>x</td><td>-</td><td>-</td></tr>
+            <tr><td>Early adopter of relevant, production-ready IETF standards</td><td>x</td><td>-</td><td>-</td></tr>
+            <tr><td>Open, transparent and community-led development</td><td>x</td><td>x</td><td>x</td></tr>
+          </tbody>
+        </table>
+        <section>
+          <name>High performance and robust</name>
+          <t>This expectation is set in <xref target="BCP226"/> and is taken to mean ample bandwidth, WiFi coverage everywhere, and 100% uptime experienced by all participants. In other words, "it just works".</t>
+        </section>
+        <section>
+          <name>Low friction </name>
+          <t>The assumed expectation here is that using the network should involve as little friction as possible. This is generally taken as minimising the need for participants to take a manual action to use the network for ordinary purposes.</t>
+        </section>
+        <section>
+          <name>Good access to network data, without compromising privacy</name>
+          <t>While not a documented expectation, there have been enough individual requests from IETF participants for good access to data on the IETF Network that this is considered a general expectation. The reasons for these requests vary from general interest to assisting people in assessing if any changes are needed to either the network requirements or how it is delivered.</t>
+          <t>The general privacy expectations of the IETF community are well documented and it is therefore assumed that access to network data must not compromise privacy.</t>
+        </section>
+        <section>
+          <name>Every participant needs to be able to participate fully</name>
+          <t>The expectation is that every participant is fully able to participate, as a requirement of the standards process. In practice, this means that  old (legacy) equipment is supported beyond what might be commonly supported.</t>
+        </section>
+        <section>
+          <name>Early adopter of relevant, production-ready IETF standards</name>
+          <t>The expectation here is that when a relevant IETF standard reaches the point where it is considered production-ready, work begins to implement it on the IETF Network. "Production ready" means that a number of conditions are met:</t>
+          <ul>
+            <li>It is fully supported across all of the equipment that is part of the provision.</li>
+            <li>The IETF NOC has sufficient knowledge and experience to support its use.</li>
+            <li>All vendor support is identified by that vendor as production-ready not experimental support.</li>
+          </ul>
+        </section>
+        <section>
+          <name>Open, transparent and community-led development</name>
+          <t>It is a general expectation of the IETF community that all of the custom-developed tools and services that it relies on (not off-the-shelf tools and services), are developed in an open and transparent fashion that provides ample opportunity for IETF participants to share their views on how they should be developed, and that this development takes those views into consideration.</t>
+        </section>
+      </section>
+    </section>
+
+    <section>
+      <name>How the IETF Network is currently delivered</name>
+      <section>
+        <name>IETF NOC</name>
+        <t>The IETF Network is delivered by the IETF NOC, which consists of four parts:</t>
+        <ul>
+          <li>A paid NOC lead.</li>
+          <li>A team of volunteers, drawn primarily from long-term IETF participants.</li>
+          <li>A team provided by a professional conference networking company.</li>
+          <li>A team provided by a professional remote participation services company.</li>      
+        </ul>
+      </section>
+      <section>
+        <name>Conference network</name>
+        <section>
+          <name>Approach</name>
+          <t>The IETF NOC provides its own conference network separate from that provided by a venue, by installing equipment and services at the venue.</t>
+          <t>The reasoning for this approach is based on the experiences of many IETF NOC members (including those who work professionally on conference networks) regarding venue networks:</t>
+          <ul>
+            <li>
+            <t>Venue networks are rarely capable of delivering the requirements for the IETF Network, specifically:</t>
+            <ul>
+              <li>Rarely able to deliver IPv6</li>
+              <li>Rarely able to cope with the number and variety of different devices (designed for coverage, not density)</li>
+              <li>Rarely provide an onsite helpdesk</li>
+              <li>Rarely support recent wireless standards and features</li>
+              <li>Rarely provide significant privacy protection</li>
+              <li>Rarely able to support HackNet (see below)</li>
+              <li>Rarely provides visibility into network usage</li>
+              <li>Sometimes do not have sufficient bandwidth</li>
+              <li>Sometimes have filtering or other traffic modification</li>              
+            </ul>
+            </li>
+            <li>It is not possible to test the performance and reliability of venue networks well enough in advance to trust them (too many problems appear with scale and variety of clients)</li>
+          </ul>
+        </section>
+        <section>
+          <name>Equipment and services</name>
+          <t>The equipment itself is stored between IETF Meetings by the professional conference networking company and shipped to each venue. The volume of this equipment is substantial, taking up a full rack and multiple other boxes.</t>
+          <ul>
+            <li><strong>1Gb/s or 10Gb/s Internet connection*</strong>, almost always donated by a local provider. For some venues the provider installs a new fibre into the venue to deliver this connection.</li>
+            <li><strong>Router(s)*</strong>.</li>  
+            <li><strong>Access points*, controllers* and switches*</strong> to provide WiFi coverage over the entire venue.</li>
+            <li><strong>Servers*</strong> that provide core services such as DHCP and DNS, and onsite monitoring and management.</li>  
+            <li><strong>Raspberry Pis</strong> for network monitoring.</li> 
+            <li><strong>Cameras, tripods, and A/V control equipment</strong> for providing the remote participation services.</li>
+            <li><strong>Dedicated IPv4 and IPv6 address blocks</strong> that are ‘owned’ by the IETF.</li>        
+          </ul>
+          <t>Items marked with * are donated by IETF sponsors - major equipment providers that are significantly engaged in the IETF.</t>
+          <t>Most of this equipment is enterprise-grade and there are multiple devices of each class in order to provide a high level of redundancy.</t>
+          <t>The in-room WiFi equipment is primarily installed by the professional conference networking company and the A/V equipment by the remote participation services provider.</t>
+        </section>
+        <section>
+          <name>Set up and management</name>
+          <t>The set up generally takes three to four days or work before the Saturday when the IETF Meeting starts.</t>
+          <t>During the meeting week, the delivery of the IETF Network is as follows:</t>
+          <ul>
+            <li>The NOC Lead has overall operational responsibility, which includes daily meetings, coordinating between the different teams and liaising with the Secretariat, LLC, venue and IETF leadership.</li>
+            <li>The volunteer team manages the network, including all connectivity, WiFi access, and core services such as DHCP and DNS.</li>
+            <li>The professional conference networking company manages the physical side of the equipment - power, location, cabling, etc. They also provide all first line support, including staffing the helpdesk. Throughout the week, room configurations change.</li>
+            <li>The professional remote participation services company delivers the remote participation services.</li>
+          </ul>
+        </section>
+        <section>
+          <name>Multiple SSIDs</name>
+          <t>The conference network is entirely wireless and delivered as a set of SSIDs, each with different characteristics to support different users:</t>
+          <dl>
+            <dt><strong>ietf</strong>.</dt>
+            <dd>The main SSID. Currently this delivers IPv4 and IPv6 with public addresses assigned to each client. It is expected to move to any IPv6-mostly network in due course. This primarily aims to meet the "High performance and robust" expectation, while slowly evolving to meet the "Early adopter of production-ready IETF standards" expectation.</dd>
+            <dt><strong>eduroam</strong>.</dt>
+            <dd>For existing eduroam users. Eduroam is an international roaming service for users in research, higher education and further education. It provides researchers, teachers, and students network access when visiting an institution other than their own. Users are authenticated with credentials from their home institution, regardless of the location of the eduroam access point. This is implemented to support the "Low friction" expectation above.</dd>
+            <dt><strong>ietf-legacy</strong>.</dt>
+            <dd>A hidden SSID for those with old devices that cannot connect to the main <strong>ietf</strong> SSID. This is generally used by a very small number of very old participant devices (less than 10). This is implemented to support the "Every participant needs to be able to participate fully" expectation above.</dd>
+          </dl>
+          <t>There are also SSIDs used as part of the experimental network, described below.</t>
+        </section>
+      </section>
+      <section>
+        <name>Experimental network</name>
+        <t>The experimental network comprises multiple physical networks.</t>
+        <section>
+          <name>Test SSIDs</name>
+          <t>Test SSIDs available across all access points, are generally used for users to test new features before they are implemented on the production <strong>ietf</strong> SSID. A recent example is <strong>ietf-ipv6-mostly</strong>, which provides an "IPv6-only preferred" network [RFC 8925]. This supports the "Early adopter of relevant, production-ready IETF standards" expectation above.</t>
+          <t>Test SSIDs are also used to test new features that might become new production SSIDs, separate from the main production SSID. For example, while not implemented, there was discussion on offering a permanent SSID with OpenRoaming, that would have first been a test SSID.</t>
+        </section>
+        <section>
+          <name>Hackathon network</name>
+          <t>The hackathon network is primarily intended to support projects that are part of the IETF Hackathon.</t>
+          <t>For onsite participants, each of the tables in the hackathon room has a wired switch installed and specific networks are created on a per table/project basis as needed. This averages 2-3 networks per meeting. After the IETF Hackathon finishes, those switches with custom networks are moved to the Shared Workspace so that work on those projects can continue.</t>
+          <t>For remote participants, the IETF NOC maintains a custom router image that can be used, together with a Datatracker account, to build a cheap router that tunnels to the IETF Hackathon network. This service is called HackNet.</t>
+        </section>
+        <section>
+          <name>Local experimental networks</name>
+          <t>Very occasionally, a local network is created, either wired and wireless, to support experimentation that has to be kept entirely separate from the IETF Network.</t>
+        </section>
+      </section>
+      <section>
+        <name>Hotel network</name>
+        <t>The IETF NOC works with the hotel IT provider so that a new SSID is added to the existing hotel network (<strong>ietf-hotel</strong>) and traffic on that is sent to a small IETF NOC router that then backhauls the traffic to the conference network.</t>
+        <t>Where this backhaul requires a dedicated circuit (as opposed to just running a cable) this is always donated by the local provider of Internet connectivity, and sometimes includes the installation of new fibre just for this purpose.</t>
+        <t>Working with the hotel network in this way, often shows up issues with installation and configuration of the hotel networking equipment that the IETF NOC assists the hotel in addressing.</t>
+        <t>The reasoning for this approach is based on the experiences of many NOC members (including those who work professionally on conference networks) regarding hotel networks:</t>
+        <ul>
+          <li>Captive portals, as regularly used in hotel networks, are a major source of problems when a large number of devices go through them.</li>
+          <li>The IETF NOC regularly discovers issues with hotel networks that they fix as part of working with the hotel IT provider. Examples include, all APs set to the same channel, APs on the roof of elevators, APs that are not cabled to a controller, etc.</li>
+        </ul>
+      </section>
+      <section>
+        <name>Remote participation services</name>
+        <t>The remote participation services provider has an onsite team who operate and monitor the services throughout the meeting. The onsite equipment needed is partly supplied by the services provider and partly by the venue audio/visual services provider. Generally the latter provides the microphones, speakers and sound desk, with everything else provided and managed by the remote participation services provider.</t>
+        <t>The remote participation service itself is hosted in the cloud.</t>
+      </section>
+      <section>
+        <name>Support</name>
+        <t>The professional conference networking company runs a staffed helpdesk during the IETF meeting (not all day) and they monitor and respond to tickets submitted by email. These tickets may require escalation to a different part of the IETF NOC, such as the volunteers or remote participation provider.</t>
+        <t>The reasoning for this approach is:</t>
+        <ul>
+          <li>This is a working meeting, not a conference where people go to watch presentations, and so a participant unable to work has an impact on the IETF as they cannot participate in the standards process.</li>
+          <li>An onsite helpdesk is able to fix things there and then.</li>
+          <li>The combination of our own network, volunteers in the NOC with very high levels of skills, a very technical group that needs support and a local helpdesk, enables an exceptional level of diagnostic support. For example, problems diagnosed by the IETF NOC have led directly to changes in the codebase of the iPhone.</li>
+        </ul>
+      </section>
+      <section>
+        <name>Network data</name>
+        <t>In order to meet the expectation of "Good access to network data, without compromising privacy" some network and session participation data is collected during the meeting but network flows are not monitored and recorded. At the end of the meeting aggregate data is extracted and the source data is deleted.</t>
+        <t>This data is then made available to the IETF community in a number of ways, though these are not widely known about:</t>
+        <ul>
+          <li>Session participation data with geolocation is shown on a <eref target="https://dashboard.meeting.ietf.org/dashboard">public dashboard</eref>.</li>
+          <li>Grafana dashboards on wireless users, overall traffic and packet breakdowns, have recently been introduced.</li>
+        </ul>
+        <t>The IETF NOC used to present at each plenary session on the use of the network but this was dropped from the agenda in 2019 or so.</t>
+      </section>
+      <section>
+        <name>Cost</name>
+        <t>The total cost of providing the IETF Network for the three IETF Meetings in 2024 was just over $1,000,000, a significant proportion of the total cost of over $4,500,000. This can be broken down into the following buckets, which are intentionally coarse-grained in order to protect contractual confidentiality:</t>
+        <ul>
+          <li>The cost of the two contractors - the remote participation services provider and the professional conference networking company, and associated expenses. The fees charged by these companies are confidential.</li>
+          <li>The cost of the volunteers and overall NOC management, including accommodation, expenses, onsite meals and site visits, totalled approximately $250,000 in 2024.</li>
+          <li>The cost of shipping the equipment. Approximately $70,000 over the year.</li>
+        </ul>
+        <t>The equipment and circuits are almost all donated by sponsors and so these costs are excluded from the above costs.</t>
+      </section>
+    </section>
+    
+    <section>
+      <name>Meeting networks at other meetings</name>
+      <t>The following two examples of meeting networks at other meetings, NANOG and W3C, have been chosen to show two different models for meeting networks from the IETF model. The W3C model is quite different from the IETF and the NANOG model is somewhere in the middle. The information presented has been checked with relevant organisation.</t>
+      <t>Neither are exact matches to the IETF. For example, while NANOG meets three times a year those meetings are solely in North America and while W3C meets globally, it only has a plenary meeting once a year. While both are hybrid meetings, both have a more limited set of remote participation services than the IETF.</t>
+      <section>
+        <name>NANOG</name>
+        <t>The network at NANOG meetings is provided in a similar way to the IETF network with a new network (APs, controllers, switches) fitted by a professional conference networking company, bypassing the venue network. However, the equipment shipped is much smaller and much cheaper to ship as less of it is enterprise-grade.</t>
+        <t>The Hotel Network however, is the existing hotel network with no modification or enhancement. NANOG does not rely on the hotel's existing network at all. NANOG looks for available spare fiber into the communications room and if the hotel doesn't have any, then NANOG coordinates with a local ISP to have it installed as a Network Sponsor. In some cases, the hotel has fibre they can use (if they don't have any) and the provider might even add a commercial client.</t>
+        <t>The professional conference networking company operates the whole network, there is no equivalent of the IETF NOC volunteers.</t>
+      </section>
+      <section>
+        <name>W3C</name>
+        <t>The W3C uses the venue network for the meeting network, but works with the venue for some months before the meeting, testing it and helping them fix any issues that would affect its performance. They often contract for additional bandwidth above what their Internet provider normally serves to the venue. The quality of the existing network and the willingness of the venue to work with them are important factors in venue selection.</t>
+        <t>Venue staff manage the network, for a fee, and no W3C staff or professional conference networking company are employed to do so.</t>
+        <t>A/V hardware is provided and managed by W3C staff.</t>
+        <t>The network has received among the highest scores within the logistics ratings in the feedback surveys for recent annual W3C Conferences (TPAC meetings):</t>
+        <ul>
+          <li>In 2024 a score of 4.48 out of 5</li>
+          <li>In 2023 a score of 4.54 out of 5</li>
+          <li>In 2022 a score of 4.51 out of 5</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <name>Areas of disagreement</name>
+      <t>There are a number of areas of disagreement within the community about the required purposes and attributes of the IETF Network and how it is delivered. Specific disagreements include:</t>
+      <ol>
+        <li>If the networks installed in meeting venues can meet the requirements for a conference network, including the required attributes.</li>
+        <li><t>If all the requirements for the hotel network necessary.</t>
+          <ol type="%c.">
+            <li>If so, then if the networks installed in meeting hotels meet those requirements, including the required attributes.</li>
+          </ol>
+        </li>
+        <li><t>If the IETF Network should support an experimental network.</t>
+          <ol type="%c.">
+            <li>If so, then if it should support the same three physical networks described above.</li>
+          </ol>
+        </li>
+        <li>If the IETF Network should be an early adopter of relevant, production-ready IETF standards.</li>
+        <li><t>If the IETF Network should support old (legacy) equipment beyond what might be commonly supported.</t>
+          <ol type="%c.">
+            <li>If so, then what should be the minimum threshold of supported equipment.</li>
+          </ol>
+        </li>
+        <li>If the current provision of network data provides good access to network data, without compromising privacy.</li>
+      </ol>
+    </section>
+    
+    <section>
+      <name>Next steps</name>
+      <t>As noted above, the IETF LLC is unclear on what the path is to resolve these disagreements. This is important because they get to the heart of the requirements for the IETF Network and the resulting provision of that network. The main area of uncertainty is whether this is a community matter that requires a community-led process to determine an outcome such as an RFC, or this is for the IETF LLC to lead on and make decisions through its normal consultative processes.</t>
+    </section>
+
+    <section anchor="IANA">
+      <name>IANA Considerations</name>
+      <t>This memo includes no request to IANA.</t>
+    </section>
+    
+    <section anchor="Security">
+      <name>Security Considerations</name>
+      <t>This document should not affect the security of the Internet.</t>
+    </section>  
+  </middle>
+  
+  <back>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Informative References</name>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml9/reference.BCP.0205.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml9/reference.BCP.0226.xml"/>
+      </references>
+    </references>
+    
+    <section anchor="Acknowledgements" numbered="false">
+      <name>Acknowledgements</name>
+      <t>Thanks to multiple members of the IETF NOC for their help in ensuring the accuracy of this document, particularly Joe Clarke, Sean Croghan, Colin Doyle, Con Reilly, Simon Pietro Romano. Thanks also to Roman Danyliw and Victor Kuarsingh for their reviews.</t>
+    </section>      
+  </back>
+</rfc>
