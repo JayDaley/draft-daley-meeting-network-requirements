@@ -11,7 +11,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="info"
-  docName="draft-daley-meeting-network-requirements-00"
+  docName="draft-daley-meeting-network-requirements-01"
   ipr="trust200902"
   obsoletes=""
   updates=""
@@ -21,7 +21,7 @@
   
   <front>
     <title>IETF Network Requirements</title>   
-    <seriesInfo name="Internet-Draft" value="draft-daley-meeting-network-requirements-00"/>
+    <seriesInfo name="Internet-Draft" value="draft-daley-meeting-network-requirements-01"/>
     <author fullname="Jay Daley" initials="J" surname="Daley">     
       <!-- all of the following elements are optional -->
       <organization>IETF Administration LLC</organization>
@@ -55,7 +55,7 @@
     
     <section>
       <name>Introduction</name>
-      <t>The network that IETF participants use at an IETF Meeting has been a high-profile feature of IETF Meetings for some time and is now a major part of the behind-the-scenes work and cost of running an IETF Meeting. This network replaces any venue network using equipment donated by suppliers, installed and managed by a mixed team of volunteers and contractors.</t>      
+      <t>The network that IETF participants use at an IETF Meeting has been a high-profile feature of IETF Meetings for some time and is now a major part of the behind-the-scenes work and cost of running an IETF Meeting. This network replaces any venue network using equipment donated by suppliers, installed and managed by a team of volunteers and contractors.</t>      
       <t>There are disagreements within the community about the requirements for this network, how it is delivered and whether or not the current cost and effort of providing the network is reasonable.</t>
       <t>The IETF Administration LLC (IETF LLC) has overall responsibility for delivering IETF Meetings to meet community-set requirements including managing the meeting costs and service provision. However, the IETF LLC is unclear on what the path is to resolve these disagreements. This is important because they get to the heart of the requirements for the IETF Network and the resulting provision of that network. The main area of uncertainty is whether this is a community matter that requires a community-led process to determine an outcome such as an RFC, or this is for the IETF LLC to lead on and make decisions through its normal consultative processes.</t>
       <t>This document aims to initiate a conversation to clarify the way forward. To do this, it provides a full primer on the facts needed to understand the current situation and the areas of disagreement. This includes It sets out the current high-level requirements for the IETF Network, an overview of how the IETF Network is delivered, how this relates back to the requirements and where the areas of disagreement are.</t>
@@ -66,7 +66,7 @@
       <dl>
         <dt>IETF Network:</dt>
         <dd>Used generically to mean the network used by IETF participants at an IETF meeting, however it is provided.</dd>
-        <dt>Remote Participation Services (RPS):</dt>
+        <dt>Remote Participation Services:</dt>
         <dd>The service and all the parts that go with it that allows remote people to participate in an IETF Meeting.</dd>
         <dt>Meeting Tool:</dt>
         <dd>The tool participants must use during the meeting in order to participate.</dd>
@@ -74,26 +74,44 @@
     </section>
     
     <section>
-      <name>Background</name>
-      <t><xref target="BCP226"/> gives the following relevant mandatory criterion for venue selection:</t>
-      <blockquote>It MUST be possible to provision Internet Access to the Facility and IETF Hotels that allows those attending in person to utilize the Internet for all their IETF, business, and day-to-day needs; in addition, there must be sufficient bandwidth and access for remote attendees. Provisions include, but are not limited to, native and unmodified IPv4 and IPv6 connectivity, and global reachability; there may be no additional limitation that would materially impact their Internet use. To ensure availability, it MUST be possible to provision redundant paths to the Internet.</blockquote>
-      <t>It further goes on to give the following important, but not mandatory, relevant criteria:</t>
-      <blockquote>
+      <name>Background</name>      
+      <section>
+        <name>BCP 226 Requirements</name>
+        <t><xref target="BCP226"/> gives the following relevant mandatory criterion for venue selection:</t>
+        <blockquote>It MUST be possible to provision Internet Access to the Facility and IETF Hotels that allows those attending in person to utilize the Internet for all their IETF, business, and day-to-day needs; in addition, there must be sufficient bandwidth and access for remote attendees. Provisions include, but are not limited to, native and unmodified IPv4 and IPv6 connectivity, and global reachability; there may be no additional limitation that would materially impact their Internet use. To ensure availability, it MUST be possible to provision redundant paths to the Internet.</blockquote>
+        <t>It further goes on to give the following important, but not mandatory, relevant criteria:</t>
+        <blockquote>
+          <ul>
+            <li>The Facility's support technologies and services -- network, audio-video, etc. -- are sufficient for the anticipated activities at the meeting, or the Facility is willing to add such infrastructure, or these support technologies and services might be provided by a third party, all at no -- or at an acceptable -- cost to the IETF.</li>
+            <li>The IETF Hotels directly provide, or else permit and facilitate, the delivery of a high performance, robust, unfiltered, and unmodified Internet service for the public areas and guest rooms; this service is to be included in the cost of the room.</li>
+          </ul>  
+        </blockquote>
+        <t>In summary, this sets out requirements for a meeting network, conceptually split into two networks:</t>
         <ul>
-          <li>The Facility's support technologies and services -- network, audio-video, etc. -- are sufficient for the anticipated activities at the meeting, or the Facility is willing to add such infrastructure, or these support technologies and services might be provided by a third party, all at no -- or at an acceptable -- cost to the IETF.</li>
-          <li>The IETF Hotels directly provide, or else permit and facilitate, the delivery of a high performance, robust, unfiltered, and unmodified Internet service for the public areas and guest rooms; this service is to be included in the cost of the room.</li>
-        </ul>  
-      </blockquote>
-      <t>In summary, this sets out requirements for a meeting network, conceptually split into two networks:</t>
-      <ul>
-        <li>Conference network</li>
-        <li>Hotel network</li>
-      </ul>
-      <t>It also sets the the following required attributes for those networks:</t>
-      <ul>
-        <li>Unfiltered and unmodified.</li>
-        <li>High performance and robust.</li>
-      </ul>
+          <li>Conference network</li>
+          <li>Hotel network</li>
+        </ul>
+        <t>It also sets the the following required attributes for those networks:</t>
+        <ul>
+          <li>Unfiltered and unmodified.</li>
+          <li>High performance and robust.</li>
+        </ul>
+      </section>
+      <section>
+        <name>BCP 101 reference to the IETF Network</name>
+        <t><xref target="BCP101" sectionFormat="of" section="5.1"/>sets out the "IETF Executive Director and Staff Responsibilities" and includes this paragraph the identifies the IETF Network as an administrative function:</t>
+        <blockquote>
+          The IETF has a long history of community involvement in the execution of certain administrative functions, in particular development of IETF tools, the operation of the meeting network by the Network Operations Center (NOC), and some outreach and communications activities conducted by the Education and Mentoring Directorate. The IETF LLC staff is expected to respect the IETF community's wishes about community involvement in these and other functions going forward as long as the staff feels that they can meet the otherwise-stated needs of the community. Establishing the framework to allow the IETF LLC to staff each administrative function as appropriate may require the IETF community to document its consensus expectations in areas where no documentation currently exists.
+        </blockquote>
+      </section>
+      <section>
+        <name>Prior work</name>
+        <t>The IETF Network has been the subject of community discussion for several years, including:</t>
+        <ul>
+          <li>In July 2019 at IETF 105 a BOF was held to discuss <eref target="https://datatracker.ietf.org/meeting/105/proceedings#gen">IETF Meeting Network Requirements</eref> for which <xref target="I-D.odonoghue-netrqmts"/> was produced.  This ultimately did not lead to any significant changes.</li>
+          <li>In February 2025 the then IETF Administration LLC Chair produced <xref target="I-D.livingood-meeting-network"/>, which is now overtaken by this document.</li>
+        </ul>
+      </section>
     </section>
     
     <section>
@@ -103,9 +121,9 @@
         <section>
           <name>Conference network</name>
           <t>The mandatory criterion in <xref target="BCP226"/> is clear that the core purpose of the IETF Network is a conference network, which includes "all their IETF, business, and day-to-day needs".</t>
-          <t>In addition it requires that "there must be sufficient bandwidth and access for remote attendees". However, in practice this requirement has expanded in scope and importance as it is no longer possible to run an IETF Meeting without full support for the RPS and Meeting Tool:</t>
+          <t>In addition it requires that "there must be sufficient bandwidth and access for remote attendees". However, in practice this requirement has expanded in scope and importance as it is no longer possible to run an IETF Meeting without full support for the remote participation services and Meeting Tool:</t>
           <ul>
-            <li>Over time, and boosted by the period during the COVID-pandemic when IETF Meetings went fully online, the level of active remote participation has grown considerably, and IETF Meetings have become dependent on the RPS to support this.</li>
+            <li>Over time, and boosted by the period during the COVID-pandemic when IETF Meetings went fully online, the level of active remote participation has grown considerably, and IETF Meetings have become dependent on the remote participation services to support this.</li>
             <li>Several meeting practices now rely on the Meeting Tool, including the use of the queuing feature for all speakers at the microphone, recording meeting participation and the use of the poll feature to replace humming.</li>
           </ul>
         </section>
@@ -195,7 +213,7 @@
           <t>The reasoning for this approach is based on the experiences of many IETF NOC members (including those who work professionally on conference networks) regarding venue networks:</t>
           <ul>
             <li>
-            <t>Venue networks are rarely capable of delivering the requirements for the IETF Network, specifically:</t>
+            <t>Venue networks are considered insufficiently capable of delivering the requirements for the IETF Network, specifically:</t>
             <ul>
               <li>Rarely able to deliver IPv6</li>
               <li>Rarely able to cope with the number and variety of different devices (designed for coverage, not density)</li>
@@ -216,14 +234,14 @@
           <t>The equipment itself is stored between IETF Meetings by the professional conference networking company and shipped to each venue. The volume of this equipment is substantial, taking up a full rack and multiple other boxes.</t>
           <ul>
             <li><strong>1Gb/s or 10Gb/s Internet connection*</strong>, almost always donated by a local provider. For some venues the provider installs a new fibre into the venue to deliver this connection.</li>
-            <li><strong>Router(s)*</strong>.</li>  
-            <li><strong>Access points*, controllers* and switches*</strong> to provide WiFi coverage over the entire venue.</li>
-            <li><strong>Servers*</strong> that provide core services such as DHCP and DNS, and onsite monitoring and management.</li>  
+            <li><strong>Router(s)†</strong>.</li>  
+            <li><strong>Access points†, controllers† and switches†</strong> to provide WiFi coverage over the entire venue.</li>
+            <li><strong>Servers†</strong> that provide core services such as DHCP and DNS, and onsite monitoring and management.</li>  
             <li><strong>Raspberry Pis</strong> for network monitoring.</li> 
             <li><strong>Cameras, tripods, and A/V control equipment</strong> for providing the remote participation services.</li>
             <li><strong>Dedicated IPv4 and IPv6 address blocks</strong> that are ‘owned’ by the IETF.</li>        
           </ul>
-          <t>Items marked with * are donated by IETF sponsors - major equipment providers that are significantly engaged in the IETF.</t>
+          <t>Items marked with † are donated by IETF sponsors - major equipment providers that are significantly engaged in the IETF.</t>
           <t>Most of this equipment is enterprise-grade and there are multiple devices of each class in order to provide a high level of redundancy.</t>
           <t>The in-room WiFi equipment is primarily installed by the professional conference networking company and the A/V equipment by the remote participation services provider.</t>
         </section>
@@ -270,6 +288,10 @@
           <name>Local experimental networks</name>
           <t>Very occasionally, a local network is created, either wired and wireless, to support experimentation that has to be kept entirely separate from the IETF Network.</t>
         </section>
+        <section>
+          <name>Requesting experiments</name>
+          <t>Currently, there is no documented process for requesting an experiment. Anyone considering an experiment needs to speak to the NOC and the NOC in turn may need to ask the IESG to decide if a requested experiment is suitable for the IETF.</t>
+        </section>
       </section>
       <section>
         <name>Hotel network</name>
@@ -281,6 +303,7 @@
           <li>Captive portals, as regularly used in hotel networks, are a major source of problems when a large number of devices go through them.</li>
           <li>The IETF NOC regularly discovers issues with hotel networks that they fix as part of working with the hotel IT provider. Examples include, all APs set to the same channel, APs on the roof of elevators, APs that are not cabled to a controller, etc.</li>
         </ul>
+        <t>Historically, this approach was also affected by hotels often charging for WiFi, having insufficient connectivity and operating filtering or traffic shaping. These are now much rarer issues.</t>
       </section>
       <section>
         <name>Remote participation services</name>
@@ -348,9 +371,9 @@
       <t>There are a number of areas of disagreement within the community about the required purposes and attributes of the IETF Network and how it is delivered. Specific disagreements include:</t>
       <ol>
         <li>If the networks installed in meeting venues can meet the requirements for a conference network, including the required attributes.</li>
-        <li><t>If all the requirements for the hotel network necessary.</t>
+        <li><t>If all the requirements for the hotel network are necessary.</t>
           <ol type="%c.">
-            <li>If so, then if the networks installed in meeting hotels meet those requirements, including the required attributes.</li>
+            <li>If so, then if the networks already present in meeting hotels meet those requirements, including the required attributes.</li>
           </ol>
         </li>
         <li><t>If the IETF Network should support an experimental network.</t>
@@ -391,12 +414,46 @@
         <name>Informative References</name>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml9/reference.BCP.0205.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml9/reference.BCP.0226.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml9/reference.BCP.0101.xml"/>
+        <reference anchor="I-D.odonoghue-netrqmts" target="https://datatracker.ietf.org/doc/html/draft-odonoghue-netrqmts-02">
+        <front>
+          <title>IETF Meeting Network Requirements</title>
+          <author initials="K." surname="O'Donoghue" fullname="Karen O'Donoghue">
+            <organization>IETF NOC Team</organization>
+          </author>
+          <author initials="R. M." surname="Hinden" fullname="Bob Hinden">
+            <organization>Check Point Software</organization>
+          </author>
+          <date month="November" day="4" year="2019"/>
+          <abstract>
+            <t>
+              The IETF Meeting Network has become integral to the success of any physical IETF meeting. Building such a network, which provides service to thousands of heavy users and their multitude of devices, spread throughout the event venue, with very little time for setup and testing is a challenge. This document provides a set of requirements, derived from hard won experience, as an aid to anyone involved in designing and deploying such future networks.
+            </t>
+          </abstract>
+        </front>
+        <seriesInfo name="Internet-Draft" value="draft-odonoghue-netrqmts-02"/>
+        </reference>
+        <reference anchor="I-D.livingood-meeting-network" target="https://datatracker.ietf.org/doc/html/draft-livingood-meeting-network-01">
+          <front>
+            <title>IETF Meeting Network Recommendations</title>
+            <author initials="J." surname="Livingood" fullname="Jason Livingood">
+              <organization>Comcast</organization>
+            </author>
+            <date month="February" day="23" year="2025"/>
+            <abstract>
+              <t>
+                IETF participants need a highly reliable and responsive network, with sufficient bandwidth to avoid congestion, that enables work to be conducted without interruption or network limitation during an IETF meeting. Such a network enables in-person network attendees to get their work done. It also enables remote participants to have a good experience as well, via remote participation in working group meetings. This document makes suggestions about how to reduce complexity, reduce cost, and increase reliability of the IETF meeting network, which may be helpful in community discussion.
+              </t>
+            </abstract>
+          </front>
+          <seriesInfo name="Internet-Draft" value="draft-livingood-meeting-network-01"/>
+        </reference>
       </references>
     </references>
     
     <section anchor="Acknowledgements" numbered="false">
       <name>Acknowledgements</name>
-      <t>Thanks to multiple members of the IETF NOC for their help in ensuring the accuracy of this document, particularly Joe Clarke, Sean Croghan, Colin Doyle, Con Reilly, Simon Pietro Romano. Thanks also to Roman Danyliw and Victor Kuarsingh for their reviews.</t>
+      <t>Thanks to multiple members of the IETF NOC for their help in ensuring the accuracy of this document, particularly Joe Clarke, Sean Croghan, Colin Doyle, Con Reilly, Simon Pietro Romano. Thanks also to Roman Danyliw, Victor Kuarsingh and Jason Livingood for their reviews.</t>
     </section>      
   </back>
 </rfc>
