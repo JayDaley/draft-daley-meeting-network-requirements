@@ -99,7 +99,7 @@
       </section>
       <section>
         <name>BCP 101 reference to the IETF Network</name>
-        <t><xref target="BCP101" sectionFormat="of" section="5.1"/>sets out the "IETF Executive Director and Staff Responsibilities" and includes this paragraph the identifies the IETF Network as an administrative function:</t>
+        <t><xref target="RFC8711" sectionFormat="of" section="5.1"/> (part of <xref target="BCP101"/>) sets out the "IETF Executive Director and Staff Responsibilities" and includes this paragraph the identifies the IETF Network as an administrative function:</t>
         <blockquote>
           The IETF has a long history of community involvement in the execution of certain administrative functions, in particular development of IETF tools, the operation of the meeting network by the Network Operations Center (NOC), and some outreach and communications activities conducted by the Education and Mentoring Directorate. The IETF LLC staff is expected to respect the IETF community's wishes about community involvement in these and other functions going forward as long as the staff feels that they can meet the otherwise-stated needs of the community. Establishing the framework to allow the IETF LLC to staff each administrative function as appropriate may require the IETF community to document its consensus expectations in areas where no documentation currently exists.
         </blockquote>
